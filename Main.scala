@@ -37,11 +37,11 @@ object Main {
       new Point(x, y)
     }
 
-
-    val linesNum = scala.io.Source.stdin.bufferedReader().readLine().toLong
-    val rawPoly = for { i <- 0L until linesNum } yield scala.io.Source.stdin.bufferedReader().readLine()
-    val pointsNum = scala.io.Source.stdin.bufferedReader().readLine().toLong
-    val rawPoints = for { i <- 0L until pointsNum } yield scala.io.Source.stdin.bufferedReader().readLine()
+    val reader = scala.io.Source.stdin.bufferedReader()
+    val linesNum = reader.readLine().toLong
+    val rawPoly = for { i <- 0L until linesNum } yield reader.readLine()
+    val pointsNum = reader.readLine().toLong
+    val rawPoints = for { i <- 0L until pointsNum } yield reader.readLine()
     (rawPoly.toList.map(strToPoint), rawPoints.toList.map(strToPoint))
   }
 
